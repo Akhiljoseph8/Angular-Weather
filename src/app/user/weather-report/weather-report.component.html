@@ -1,0 +1,232 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+                                initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- Include Bootstrap CSS -->
+    <link href=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    <!-- Include Bootstrap Icons -->
+    <link href=
+"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .weather-card {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            position: relative;
+            /* To position the sun icon */
+        }
+
+        .weather-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group-text {
+            background-color: #fff;
+            border: none;
+        }
+
+        .weather-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .weather-info {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .weather-btn {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .weather-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .sunny-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ffce00;
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weather-card">
+        <h1 class="weather-title text-center mb-4">
+        {{data.resolvedAddress}}</h1>
+        
+        <div id="weatherInfo">
+            <div class="weather-icon text-center">
+                <i class="bi bi-cloud-rain"></i>
+            </div>
+            <div class="weather-info text-center">
+                <p>Temperature: {{data.currentConditions.temp}}&#8457;</p>
+                <p>Weather: {{data.currentConditions.conditions}}</p>
+                <p>Humidity: {{data.currentConditions.humidity}}%</p>
+                <p>Wind Speed: {{data.currentConditions.windspeed}} m/s</p>
+                <p>Visibility: {{data.currentConditions.visibility}}  km</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+
+
+
+<div class="container">
+    <div class="card card-1">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="temp">{{data.currentConditions.temp}}&#8457;</div> 
+                      <div class="location">{{data.resolvedAddress}}</div>
+                    </div>
+                    <div class="col-6 justify-content-right">
+                      <img class="img-fluid" src="https://img.icons8.com/plasticine/100/000000/sun.png">
+                    </div>
+                  </div>
+                 
+              </div>
+            </div>
+          
+          </div>
+    </div>
+    <div class="card card-2">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0"></li>
+          <li data-target="#demo" data-slide-to="1" class="active"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+      
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col">
+                <div class="row row1">{{data.days[0].hours[12].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png"/></div>
+                <div class="row row3">12:00</div>
+                <div class="row row4">PM</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[0].hours[13].temp}}&#8457;;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png"/></div>
+                <div class="row row3">1:00</div>
+                <div class="row row4">PM</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[0].hours[14].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/windows/100/000000/cloud.png"/></div>
+                <div class="row row3">2:00</div>
+                <div class="row row4">PM</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[0].hours[15].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/windows/100/000000/cloud.png"/></div>
+                <div class="row row3">3:00</div>
+                <div class="row row4">PM</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[0].hours[16].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/cotton/64/000000/rain--v3.png"/></div>
+                <div class="row row3">4:00</div>
+                <div class="row row4">PM</div>
+              </div>
+            </div>
+             
+          </div>
+        </div>
+      
+      </div>
+      
+      
+    </div>
+    <div class="card card-3">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2" class="active"></li>
+        </ul>
+      
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col">
+                <div class="row row1">{{data.days[1].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png"/></div>
+                <div class="row row3">{{data.days[1].datetime}}</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[2].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/ios/100/000000/sun.png"/></div>
+                <div class="row row3">{{data.days[2].datetime}}</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[3].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/windows/100/000000/cloud.png"/></div>
+                <div class="row row3">{{data.days[3].datetime}}</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[4].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/windows/100/000000/cloud.png"/></div>
+                <div class="row row3">{{data.days[4].datetime}}</div>
+              </div>
+              <div class="col">
+                <div class="row row1">{{data.days[5].temp}}&#8457;</div>
+                <div class="row row2"><img class="img-fluid" src="https://img.icons8.com/cotton/64/000000/rain--v3.png"/></div>
+                <div class="row row3">{{data.days[5].datetime}}</div>
+              </div>
+            </div>
+             
+          </div>
+        </div>
+      
+      </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,34 @@
+<div class=" " style="height: 93vh;">
+  <div class="m-2">
+  <img src="../../../assets/images/dashboardImage.jpg" alt="" style="width: 100%;">
+</div>
+    <div class="col">
+       <div class="d-flex justify-content-between mt-3">
+        <h2 class="text-danger">Locations</h2>
+          <a href="user/upload" class="btn btn-success">
+            Upload Excel
+          </a>
+       </div>
+       
+        <table  class="table table-borderd mt-3">
+            <thead>
+                <tr > 
+                    <th>City</th>
+                    <th>district</th>
+                    <th>state</th>
+                    <th>country</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of locations">
+                    <td>{{i.city}}</td>
+                    <td>{{i.district}}</td>
+                    <td>{{i.state}}</td>
+                    <td>{{i.country}}</td>
+                </tr>
+            </tbody>
+        </table>
+       
+    </div>
+  </div>

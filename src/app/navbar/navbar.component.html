@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-success ">
+    <div class="container-fluid ">
+      <span class="navbar-brand mb-0 h1">Weather App</span>
+      <a *ngIf="!logStatus"  class="btn btn-outline-dark me-3 btn-danger" routerLink="/login">
+        Admin Login 
+      </a>
+      <a *ngIf="logStatus" (click)="logout()" class="btn btn-outline-dark me-3 btn-danger" routerLink=" ">
+        Logout
+      </a>
+    </div>
+
+  </nav>
